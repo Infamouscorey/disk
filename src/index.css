@@ -1,0 +1,74 @@
+@import '@fontsource-variable/dm-sans';
+@import '@fontsource-variable/literata';
+
+:root {
+  font-family: 'DM Sans Variable', 'Segoe UI', sans-serif;
+  color: #33283d;
+  background: #f5eff8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --ink: #33283d;
+  --ink-muted: #70647c;
+  --ink-faint: #92879d;
+  --paper: #fcf9ff;
+  --paper-alt: #f4eef9;
+  --paper-deep: #e9def1;
+  --line: #e8ddec;
+  --line-strong: #d6c6df;
+  --accent: #d56f9e;
+  --accent-soft: #f8e6f0;
+  --moss: #9474c4;
+  --moss-soft: #eee7f8;
+  --gold: #dfa46d;
+  --blue: #8297d2;
+  --rose: #d582a3;
+  --sans: 'DM Sans Variable', 'Segoe UI', sans-serif;
+  --serif: 'Literata Variable', 'Iowan Old Style', Georgia, serif;
+  --shadow-soft: 0 18px 40px rgb(74 48 91 / 9%);
+
+  color-scheme: light;
+  font-optical-sizing: auto;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #f2e9f8;
+  --ink-muted: #c6b5d1;
+  --ink-faint: #a08eae;
+  --paper: #201827;
+  --paper-alt: #2a2033;
+  --paper-deep: #392b45;
+  --line: #44354f;
+  --line-strong: #5a4567;
+  --accent: #ee8fb4;
+  --accent-soft: #432a3d;
+  --moss: #b99be6;
+  --moss-soft: #382b48;
+  --gold: #edb57e;
+  --blue: #a7b7ef;
+  --rose: #e39bb8;
+  --shadow-soft: 0 24px 56px rgb(0 0 0 / 34%);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { width: 100%; min-width: 320px; min-height: 100%; margin: 0; }
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--moss) 15%, transparent), transparent 32%),
+    radial-gradient(circle at bottom right, color-mix(in srgb, var(--accent) 10%, transparent), transparent 30%),
+    var(--paper-alt);
+}
+button, input, textarea, select { font: inherit; }
+button { color: inherit; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--moss); outline-offset: 2px; }
+::selection { color: #fff; background: var(--moss); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

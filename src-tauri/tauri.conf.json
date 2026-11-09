@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "NovaRole",
+  "version": "0.1.0",
+  "identifier": "com.novarole.studio",
+  "build": {
+    "beforeDevCommand": "npm run dev -- --host 127.0.0.1",
+    "devUrl": "http://127.0.0.1:5173",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "NovaRole · Local Roleplay Studio",
+        "width": 1440,
+        "height": 940,
+        "minWidth": 760,
+        "minHeight": 580,
+        "center": true,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost http://localhost:11434 http://127.0.0.1:11434 http://localhost:3001 http://127.0.0.1:3001 ws://127.0.0.1:5173; img-src 'self' asset: http://asset.localhost data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "category": "Productivity",
+    "shortDescription": "A local-first roleplay studio",
+    "targets": "all"
+  }
+}

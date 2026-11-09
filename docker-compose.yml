@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: novarole
+      POSTGRES_USER: novarole
+      POSTGRES_PASSWORD: novarole_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - novarole-postgres:/var/lib/postgresql/data
+      - ./api/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U novarole -d novarole"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  novarole-postgres:
